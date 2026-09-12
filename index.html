@@ -1045,19 +1045,50 @@ footer{max-width:1160px;margin:0 auto}
   .library-intro{align-items:flex-start;flex-direction:column;gap:18px}
 }
 
+
+/* LEGIA refinement: pure wordmark + quieter text-bank intro */
+.legia-mark{gap:0}
+.library-intro{
+  display:block;
+  padding-bottom:22px;
+}
+.library-intro > div{width:100%}
+
+
+/* Om LEGIA */
+.about-page{max-width:1000px;margin:0 auto;padding:76px 0 100px}
+.about-intro{max-width:790px;padding-bottom:58px;border-bottom:1px solid var(--line)}
+.about-intro h2{font-family:Georgia,"Times New Roman",serif;font-size:clamp(38px,5vw,64px);line-height:1.04;font-weight:400;letter-spacing:-.025em;margin:12px 0 24px;color:var(--forest)}
+.about-lead{font-size:20px;line-height:1.7;color:var(--muted);margin:0}
+.about-section{display:grid;grid-template-columns:180px 1fr;gap:54px;padding:54px 0;border-bottom:1px solid var(--line)}
+.about-kicker{font-size:12px;font-weight:800;letter-spacing:.16em;color:var(--muted);padding-top:6px}
+.about-section h3{font-family:Georgia,"Times New Roman",serif;font-size:30px;line-height:1.2;font-weight:400;color:var(--forest);margin:0 0 16px}
+.about-section p{font-size:17px;line-height:1.75;color:var(--muted);max-width:720px;margin:0}
+.level-explainer{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.level-explainer article{padding:28px 26px 32px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.level-explainer .level-number{display:block;font-size:12px;font-weight:800;letter-spacing:.12em;color:var(--forest);margin-bottom:34px}
+.level-explainer h3{font-size:23px;margin-bottom:14px}
+.level-explainer p{font-size:15px;line-height:1.65}
+@media(max-width:760px){
+  .about-page{padding:48px 0 70px}
+  .about-section{grid-template-columns:1fr;gap:20px;padding:38px 0}
+  .level-explainer{grid-template-columns:1fr}
+  .about-intro{padding-bottom:40px}
+}
+
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Hoppa till innehållet</a>
 <header class="site-header"><div class="wrap nav-shell">
 <a class="legia-mark" href="#" onclick="showView('library');return false" aria-label="LEGIA startsida">
-<span class="legia-symbol" aria-hidden="true"><i></i><i></i><i></i></span>
 <span>LEGIA</span>
 </a>
 <nav class="topnav" aria-label="Huvudnavigation">
 <button onclick="showView('library')">Texter</button>
 <button onclick="showView('strategies')">Lässtrategier</button>
 <button onclick="showView('progress')">Min progression</button>
+<button onclick="showView('about')">Om LEGIA</button>
 <button class="teacher-entry teacher-login" onclick="showTeacherView()">LÄRARE</button>
 </nav>
 </div></header>
@@ -1085,7 +1116,7 @@ footer{max-width:1160px;margin:0 auto}
 <div class="hero-dot"></div>
 </div>
 </section>
-<div class="library-intro"><div><p class="eyebrow">TEXTBANK</p><h2>Välj en text</h2></div><p>En text per nivå inom varje texttyp. Välj nivå själv eller arbeta dig vidare i stigande svårighetsgrad.</p></div>
+<div class="library-intro"><div><p class="eyebrow">TEXTBANK</p><h2>Välj en text</h2></div></div>
 <div class="card student-panel" aria-labelledby="student-title">
 <h3 id="student-title">Innan du börjar</h3>
 <p class="muted">Skriv ditt namn och klasskoden som du fått av din lärare. Då sparas resultatet i rätt klass.</p>
@@ -1172,6 +1203,54 @@ footer{max-width:1160px;margin:0 auto}
     </div>
 
     <div id="classDetails" class="card hidden"></div>
+  </div>
+</section>
+
+
+<section id="about" class="view" aria-labelledby="about-title">
+  <div class="about-page">
+    <header class="about-intro">
+      <p class="eyebrow">OM LEGIA</p>
+      <h2 id="about-title">Läsförståelse med tydlig progression.</h2>
+      <p class="about-lead">LEGIA är ett digitalt verktyg för träning i läsförståelse. Tjänsten är utvecklad av legitimerade lärare, för lärare och elever, med fokus på varierade texttyper, tydlig progression och återkoppling som kan stödja elevens fortsatta utveckling.</p>
+    </header>
+
+    <section class="about-section">
+      <div class="about-kicker">SYFTE</div>
+      <div>
+        <h3>Att göra läsförståelsen synlig</h3>
+        <p>Eleverna möter texter och frågor som tränar flera delar av läsförståelsen. Nivåerna handlar inte bara om längre texter eller svårare ord. I takt med att nivån ökar behöver eleven i högre grad koppla samman information, läsa mellan raderna, tolka perspektiv och resonera om textens budskap.</p>
+      </div>
+    </section>
+
+    <section class="about-section levels-section">
+      <div class="about-kicker">NIVÅERNA</div>
+      <div class="level-explainer">
+        <article>
+          <span class="level-number">01</span>
+          <h3>Grundläggande förståelse</h3>
+          <p>Hitta tydlig information, förstå ord i sammanhang, dra enkla slutsatser och sammanfatta det viktigaste.</p>
+        </article>
+        <article>
+          <span class="level-number">02</span>
+          <h3>Fördjupad förståelse</h3>
+          <p>Koppla ihop information från olika delar av texten, förstå samband och orsaker, tolka uttryck och resonera om budskap.</p>
+        </article>
+        <article>
+          <span class="level-number">03</span>
+          <h3>Tolkning och analys</h3>
+          <p>Förstå underförstådd information, tolka perspektiv och motiv, dra mer komplexa slutsatser och resonera om tema och budskap.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="about-section">
+      <div class="about-kicker">FÖR LÄRAREN</div>
+      <div>
+        <h3>Ett underlag för undervisning och uppföljning</h3>
+        <p>Resultaten i LEGIA är tänkta att hjälpa läraren att se mönster: vilka typer av frågor en elev behärskar och var eleven behöver fortsatt undervisning eller träning. Resultaten ska användas som ett pedagogiskt underlag och är inte ett automatiskt betygssystem.</p>
+      </div>
+    </section>
   </div>
 </section>
 
@@ -6289,6 +6368,11 @@ function saveProgressObject(p){try{localStorage.setItem(progressKey(),JSON.strin
 function saveProgress(){saveProgressObject(loadProgress())}
 function showView(id){document.querySelectorAll(".view").forEach(v=>v.classList.remove("active"));document.getElementById(id).classList.add("active");if(id==="library")renderLibrary();if(id==="progress")renderProgress();window.scrollTo({top:0,behavior:"smooth"})}
 function levelLabel(l){return l===1?"Nivå 1":l===2?"Nivå 2":"Nivå 3"}
+function levelSkills(level){
+  if(level===1) return ["Hitta information","Enkla slutsatser","Ordförståelse","Sammanfatta"];
+  if(level===2) return ["Dra slutsatser mellan delar","Samband och orsak","Ord och uttryck i kontext","Budskap"];
+  return ["Underförstådd information","Perspektiv och motiv","Komplexa slutsatser","Tema och budskap"];
+}
 function typeLabel(type){return ({"Berättande":"Berättande text","Faktatext":"Faktatext","Artikel":"Artikel","Instruerande":"Instruerande text","Argumenterande":"Argumenterande text","Sakprosa":"Sakprosatext"})[type]||type}
 function renderLibrary(){
  const tf=document.getElementById("typeFilter").value, lf=document.getElementById("levelFilter").value;
@@ -6297,7 +6381,7 @@ function renderLibrary(){
    .sort((a,b)=>a.level-b.level||a.title.localeCompare(b.title,"sv"));
  const typeOrder=["Berättande","Faktatext","Artikel","Instruerande","Argumenterande","Sakprosa"];
  const typeName=t=>t==="Faktatext"?"Faktatexter":t==="Artikel"?"Artiklar":t==="Sakprosa"?"Sakprosatexter":t==="Berättande"?"Berättande texter":t+" texter";
- const card=t=>`<article class="card text-card ${seen.has(t.id)?"done":""}"><div><span class="tag">${typeLabel(t.type)}</span>${seen.has(t.id)?'<span class="done-badge">✓ Klar</span>':""}</div><h3>${escapeHtml(t.title)}</h3><div class="level level-${t.level}">${levelLabel(t.level)}</div><div class="skills">${t.skills.map(s=>`<span class="skill">${escapeHtml(s)}</span>`).join("")}</div><p class="muted">${t.questions.length} frågor</p><div class="push"><button class="primary" onclick="startText('${t.id}')">${seen.has(t.id)?"Gör igen":"Starta"} →</button></div></article>`;
+ const card=t=>`<article class="card text-card ${seen.has(t.id)?"done":""}"><div><span class="tag">${typeLabel(t.type)}</span>${seen.has(t.id)?'<span class="done-badge">✓ Klar</span>':""}</div><h3>${escapeHtml(t.title)}</h3><div class="level level-${t.level}">${levelLabel(t.level)}</div><div class="skills">${levelSkills(t.level).map(s=>`<span class="skill">${escapeHtml(s)}</span>`).join("")}</div><p class="muted">${t.questions.length} frågor</p><div class="push"><button class="primary" onclick="startText('${t.id}')">${seen.has(t.id)?"Gör igen":"Starta"} →</button></div></article>`;
  const groups=typeOrder.map(type=>{
    const typeItems=arr.filter(t=>t.type===type);
    const items=[1,2,3].map(level=>typeItems.find(t=>t.level===level)).filter(Boolean);
@@ -6378,10 +6462,10 @@ function finishText(){
  document.getElementById("score").textContent=state.score+" / "+state.current.questions.length;
  const pct=Math.max(0,Math.min(100,Math.round(state.score/state.current.questions.length*100)));
  document.getElementById("resultText").textContent=pct>=80?"Du visar en säker förståelse av texten. Fortsätt utmana dig med frågor där du behöver läsa mellan raderna.":pct>=60?"Du har kommit en bra bit. Nästa gång kan du prova att läsa frågan en gång extra och leta efter ledtrådar i flera delar av texten.":"Bra att du tränar! Läs gärna texten igen och använd lässtrategierna när du försöker igen.";
- document.getElementById("trained").innerHTML="<h3>Du tränade på:</h3><ul>"+state.current.skills.map(s=>"<li>✓ "+s+"</li>").join("")+"</ul><p><b>Ett tips till nästa gång:</b> Försök att läsa frågan en gång extra innan du tittar på svarsalternativen.</p>";
+ document.getElementById("trained").innerHTML="<h3>Du tränade på:</h3><ul>"+levelSkills(state.current.level).map(s=>"<li>✓ "+s+"</li>").join("")+"</ul><p><b>Ett tips till nästa gång:</b> Försök att läsa frågan en gång extra innan du tittar på svarsalternativen.</p>";
  const student=getStudent();
  const details=state.current.questions.map((q,i)=>{const correct=String.fromCharCode(65+q[2]);const history=(state.histories[i]||[]).map(a=>String.fromCharCode(65+a));return {nr:i+1,question:q[0],correct,chosen:state.answers[i]===undefined?"–":String.fromCharCode(65+state.answers[i]),attempts:state.attempts[i],answerHistory:history,wrongAnswers:history.filter(a=>a!==correct),skill:questionSkillLabel(i)};});
- const payload={student:student.name,classCode:student.klass,textId:state.current.id,textTitle:state.current.title,textType:state.current.type,level:state.current.level,score:state.score,total:state.current.questions.length,percent:pct,skills:state.current.skills,details:details};
+ const payload={student:student.name,classCode:student.klass,textId:state.current.id,textTitle:state.current.title,textType:state.current.type,level:state.current.level,score:state.score,total:state.current.questions.length,percent:pct,skills:levelSkills(state.current.level),details:details};
  saveResultToFirebase(payload);
  showView("result");
 }
