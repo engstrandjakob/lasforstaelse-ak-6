@@ -1085,11 +1085,11 @@ footer{max-width:1160px;margin:0 auto}
 <span>LEGIA</span>
 </a>
 <nav class="topnav" aria-label="Huvudnavigation">
-<button onclick="showView('library')">Texter</button>
-<button onclick="showView('strategies')">Lässtrategier</button>
-<button onclick="showView('progress')">Min progression</button>
-<button onclick="showView('about')">Om LEGIA</button>
-<button class="teacher-entry teacher-login" onclick="showTeacherView()">LÄRARE</button>
+<button id="navHome" onclick="showView('library')">Startsida</button>
+<button id="navStrategies" onclick="showView('strategies')">Lässtrategier</button>
+<button id="navProgress" onclick="showView('progress')">Min progression</button>
+<button id="navAbout" onclick="showView('about')">Om LEGIA</button>
+<button id="navTeacher" class="teacher-entry teacher-login" onclick="showTeacherView()">LÄRARE</button>
 </nav>
 </div></header>
 <main id="main" class="wrap">
@@ -6188,10 +6188,19 @@ function renderTeacherAuth(){
   const signedIn=isTeacherUser(user);
   document.getElementById("teacherSignedOut").classList.toggle("hidden",signedIn);
   document.getElementById("teacherSignedIn").classList.toggle("hidden",!signedIn);
+  updateNavigationForRole(signedIn);
   if(signedIn){
     document.getElementById("teacherEmail").textContent=user.email||"Lärarkonto";
     refreshTeacherDashboard();
   }
+}
+function updateNavigationForRole(isTeacher){
+  const progress=document.getElementById("navProgress");
+  const strategies=document.getElementById("navStrategies");
+  const teacher=document.getElementById("navTeacher");
+  if(progress) progress.classList.toggle("hidden",isTeacher);
+  if(strategies) strategies.classList.toggle("hidden",isTeacher);
+  if(teacher) teacher.textContent=isTeacher?"Klassresultat":"LÄRARE";
 }
 function randomClassCode(){
   const chars="ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
